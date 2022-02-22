@@ -22,6 +22,12 @@
                 padding: 5px;
                 background-color: #dfdfdf;
             }
+            #app div label {
+                font-weight: bold;
+            }
+            #app div input[type=file] {
+                width: 100%;
+            }
             #app div p {
                 white-space: pre-wrap;
             }
@@ -30,10 +36,12 @@
     <body>
         <div id="app">
             <div>
+                <label>Single File</label>
                 <input type="file" @change="onFileChangeSingle" />
                 <p>{{ singleFile }}</p>
             </div>
             <div>
+                <label>Multiple Files</label>
                 <input type="file" multiple @change="onFileChangeMultiple" />
                 <p>{{ multipleFiles }}</p>
             </div>
