@@ -23,7 +23,7 @@
                 background-color: #dfdfdf;
             }
             #app div p {
-                white-space: pre;
+                white-space: pre-wrap;
             }
         </style>
     </head>
@@ -54,7 +54,7 @@
                         return;
                     }
                     
-                    this.singleFile = files[0].name;
+                    this.singleFile = '=> ' + files[0].name;
                 },
                 onFileChangeMultiple(e) {
                     let files = e.target.files || e.dataTransfer.files;
@@ -62,7 +62,7 @@
                         return;
                     }
                     
-                    this.multipleFiles = Object.keys(files).map(index => files[index].name).join('\n');
+                    this.multipleFiles = Object.keys(files).map(index => '=> ' + files[index].name).join('\n');
                 },
             }
         })
