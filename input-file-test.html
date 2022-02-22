@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="input-file-test">
+		<title>POC - Input File</title>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<input type="file" @change="onFileChangeSingle" /><br/>
+				<span>{{ singleFile }}</span>
+			</div>
+			<div>
+				<input type="file" multiple @change="onFileChangeMultiple" /><br />
+				<span>{{ multipleFiles }}</span>
+			</div>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				singleFile: '',
+				multipleFiles: ''
+			},
+			methods: {
+				onFileChangeSingle(e) {
+					let files = e.target.files || e.dataTransfer.files;
+					if (!files.length) {
+						return;
+					}
+					
+					this.singleFile = files[0].name;
+				},
+				onFileChangeMultiple(e) {
+					let files = e.target.files || e.dataTransfer.files;
+					if (!files.length) {
+						return;
+					}
+					
+					this.multipleFiles = Object.keys(files).map(index => files[index].name).join(' ### ');
+				},
+			}
+		})
+		</script>
+	</body>
+</html>
