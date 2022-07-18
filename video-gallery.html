@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>Video Gallery</title>
+<style>
+* {
+	font-family: Helvetica;
+}
+
+.player-container {
+	display: none;
+	flex-direction: column;
+    justify-content: center;
+    align-content: center;
+	width: 100%;
+	background-color: #fafafa;
+	padding: 15px 0;
+	margin-bottom: 10px;
+}
+
+.player-container video {
+	width: 720px;
+	height: 405px;
+}
+
+.player-container .title {
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.player-container .description {
+	font-size: 12px;
+}
+
+.list {
+	display: flex;
+	flex-direction: row;
+	width: 720px;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.video-thumb {
+	display: flex;
+	flex-direction: column;
+	width: 220px;
+}
+
+.video-thumb .thumbnail {
+	width: 100%;
+}
+
+.video-thumb .title {
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+.video-thumb .description {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.video-thumb a {
+	text-decoration: none;
+	color: #000;
+	border: 0;
+}
+
+.video-thumb a:hover {
+	text-decoration: underline;
+}
+</style>
+<script>
+function playVideo(caminhoDoVideo, titulo, descricao) {
+	var playerContainer = document.getElementById('player-container');
+	var video = document.getElementById('videoPrincipal');
+	var tituloVideo = document.getElementById('tituloVideo');
+	var descricaoVideo = document.getElementById('descricaoVideo');
+	
+	playerContainer.style.display = 'flex';
+	
+	video.src = caminhoDoVideo;
+	tituloVideo.innerHTML = titulo;
+	descricaoVideo.innerHTML = descricao;
+	
+	video.play();
+}
+</script>
+</head>
+
+<body>
+<div class="list">
+	<div class="player-container" id="player-container">
+		<video controls autoplay id="videoPrincipal" src=""></video>
+		<div class="title" id="tituloVideo"></div>
+		<div class="description" id="descricaoVideo"></div>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video02.mp4', 'Video 02', 'Descrição do video 02');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video02.png" />
+			<div class="title">Video 02</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video03.mp4', 'Video 03', 'Descrição do video 03');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video03.png" />
+			<div class="title">Video 03</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video04.mp4', 'Video 04', 'Descrição do video 04');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video04.png" />
+			<div class="title">Video 04</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video02.mp4', 'Video 02', 'Descrição do video 02');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video02.png" />
+			<div class="title">Video 02</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video03.mp4', 'Video 03', 'Descrição do video 03');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video03.png" />
+			<div class="title">Video 03</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video04.mp4', 'Video 04', 'Descrição do video 04');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video04.png" />
+			<div class="title">Video 04</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video02.mp4', 'Video 02', 'Descrição do video 02');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video02.png" />
+			<div class="title">Video 02</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video03.mp4', 'Video 03', 'Descrição do video 03');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video03.png" />
+			<div class="title">Video 03</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video04.mp4', 'Video 04', 'Descrição do video 04');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video04.png" />
+			<div class="title">Video 04</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video02.mp4', 'Video 02', 'Descrição do video 02');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video02.png" />
+			<div class="title">Video 02</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video03.mp4', 'Video 03', 'Descrição do video 03');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video03.png" />
+			<div class="title">Video 03</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+	<div class="video-thumb">
+		<a onclick="playVideo('videos/video04.mp4', 'Video 04', 'Descrição do video 04');" style="cursor: pointer">
+			<img class="thumbnail" src="videos/video04.png" />
+			<div class="title">Video 04</div>
+			<div class="description">Descrição do video de exemplo</div>
+		</a>
+	</div>
+</div>
+</body>
+
+</html>
