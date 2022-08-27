@@ -7,7 +7,7 @@
 
   <body>
     <p>Click the button to create a new PDF document with <code>pdf-lib</code></p>
-    <button onclick="createPdf()">Create PDF</button>
+    <button onclick="createPdf()">Create PDF (octet stream)</button>
     <p class="small">(Your browser will download the resulting file)</p>
   </body>
 
@@ -41,7 +41,7 @@
       const pdfBytes = await pdfDoc.save()
 
 			// Trigger the browser to download the PDF document
-      download(pdfBytes, "pdf-lib_creation_example.pdf", "application/pdf");
+      download(pdfBytes, "pdf-lib_creation_example.pdf", "application/octet-stream");
     }
   </script>
 </html>
